@@ -146,23 +146,111 @@
     footer{margin-top:px;color:var(--muted);font-size:13px}
 
     /* Modal */
-    .modal{position:fixed;inset:0;display:none;align-items:center;justify-content:center;padding:20px}
-    .modal.open{display:flex;background:rgba(0, 0, 0, 0.45)}
-    .modal-card{width:100%;max-width:1100px;background:var(--card);border-radius:12px;padding:18px;box-shadow:0 10px 30px rgba(2,6,23,0.12)}
-    /* Modal layout: left = caption + preview, right = player */
-  .modal-grid{display:grid;grid-template-columns:320px 1fr;gap:18px;align-items:start}
-  .modal-thumb{width:100%;height:auto;max-height:480px;object-fit:cover;border-radius:8px}
-  .left-col{display:flex;flex-direction:column;gap:12px}
-  .right-col{display:flex;align-items:flex-start;justify-content:center}
-  #mPlayer{width:100%;} 
-  /* hide modal preview image so open modal does NOT include preview photo */
-  #mImg, .modal-thumb { display: none !important; }
-  /* make embed area match preview height and take remaining width */
-  .embed-container{position:relative;width:100%;min-height:360px;overflow:hidden;border-radius:8px;background:#000}
-  .embed-container::before{content:"";display:block;padding-top:56.25%} /* preserves 16:9 ratio */
-  .embed-container > iframe,
-  .embed-container > video,
-  .embed-container > div{position:absolute;top:0;left:0;width:100%;height:100%;border:0}
+    .modal {
+  position: fixed;
+  inset: 0;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  background: rgba(0, 0, 0, 0.45);
+  z-index: 1000;
+}
+
+.modal.open {
+  display: flex;
+}
+
+.modal-card {
+  position: relative;
+  background: var(--card);
+  border-radius: 12px;
+  padding: 24px;
+  width: 800px;
+  max-width: 90vw;
+  max-height: 90vh;
+  overflow-y: auto;
+}
+
+.modal-content {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.modal-header {
+  margin-bottom: 8px;
+}
+
+.modal-header h2 {
+  margin: 0 0 8px 0;
+  font-size: 24px;
+}
+
+.modal-desc {
+  color: var(--text);
+  line-height: 1.5;
+}
+
+#mPlayer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  margin: 16px 0;
+}
+
+#mLinks {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  justify-content: center;
+  margin-top: 16px;
+}
+
+.close {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  background: none;
+  border: none;
+  color: var(--text);
+  font-size: 24px;
+  cursor: pointer;
+  padding: 4px;
+  line-height: 1;
+}
+
+/* Embed container styles */
+.embed-container {
+  position: relative;
+  width: 100%;
+  background: #000;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+/* Portrait video */
+.embed-container.portrait {
+  width: 300px;
+  height: 480px;
+}
+
+/* Landscape video */
+.embed-container.landscape {
+  width: 700px;
+  height: 400px;
+}
+
+.embed-container iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
+
   @media (max-width:1000px){
     .modal-grid{grid-template-columns:1fr}
     .modal-thumb{height:200px;max-height:200px}
@@ -292,28 +380,30 @@
 
   <!-- modal: single-column layout (Title → Year/Origin → Description → Player → Link buttons) -->
   <div class="modal" id="modal" role="dialog" aria-modal="true" aria-hidden="true">
-    <div class="modal-card" role="document">
-      <button class="close" id="modalClose" aria-label="Close">✕</button>
+  <div class="modal-card" role="document">
+    <button class="close" id="modalClose" aria-label="Close">✕</button>
 
-      <div class="modal-body" style="display:flex;flex-direction:column;gap:12px">
-        <div class="modal-header">
-          <h2 id="mTitle" style="margin:0"></h2>
-          <p class="muted" id="mOrigin" style="margin:4px 0 0 0"></p>
-          <div id="mMetaTop" style="margin-top:8px"></div>
-        </div>
-
-        <div class="modal-desc">
-          <p id="mDesc" style="margin:0"></p>
-        </div>
-
-        <!-- centered player -->
-        <div id="mPlayer" style="display:flex;justify-content:center;align-items:center;margin:12px 0"></div>
-
-        <!-- link buttons area -->
-        <div id="mLinks" class="modal-links" style="display:flex;justify-content:center;gap:8px;flex-wrap:wrap"></div>
+    <div class="modal-content">
+      <!-- Title and metadata -->
+      <div class="modal-header">
+        <h2 id="mTitle"></h2>
+        <p class="muted" id="mOrigin"></p>
+        <div id="mMetaTop"></div>
       </div>
+
+      <!-- Description -->
+      <div class="modal-desc">
+        <p id="mDesc"></p>
+      </div>
+
+      <!-- Player container -->
+      <div id="mPlayer"></div>
+
+      <!-- Links container -->
+      <div id="mLinks"></div>
     </div>
   </div>
+</div>
 
   <div id="fb-root"></div>
 <script async defer crossorigin="anonymous" src="https://connect.facebook.net/en_PH/sdk.js#xfbml=1&version=v17.0"></script>
@@ -332,28 +422,23 @@
     origin: 'Onel de Guzman',
     profile: '',
     description: 'I think it is best to start with Onel De Guzman because he was a major figure for Filipino Internet presence',
-    tags: ['news', 'criminal', 'Legend'],styles: {
-  thumbnail: {
-    width: 'auto',
-    height: '200px',
-    objectFit: 'fit',
-    objectPosition: 'center' // can be 'left', 'right', 'center'
+    tags: ['news', 'criminal', 'Legend'],
+   styles: {
+      player: {
+        width: '700px',
+        maxWidth: '960px',
+        height: '500px',
+        margin: '0 auto',
+        display: 'block'
+      },
+      modal: {
+        width: '800px',
+        maxHeight: '90vh',
+        columnRatio: '0/1',
+        playerHeight: '600px'
+      
   },
-  player: {
-    width: '700px',          // fills container
-    maxWidth: '960px',      // max reasonable size
-    height: '500px',        // 16:9 ratio
-    margin: '0 auto',       // centers the player
-    display: 'block'
-  },
-  modal: {
-    width: '800px',        // accommodates max player width
-    maxHeight: '90vh',      // prevents overflow
-    columnRatio: '0/1',     // full width for player
-    playerHeight: '600px'   // matches player height
-  }
-}
-  },
+}  },
   {
     title: 'Kween Yasmin Peace Sign',
     year: 2023,
@@ -363,21 +448,22 @@
     profile: 'https://www.facebook.com/www.facebookyasminasistido.090',
     origin: 'Yasmin Marie M. Asistido',
     description: 'Kween Yasmin nag Pepeace Sign',
-    styles: { 
-  },
-  player: {
-    width: '700px',          // fills container
-    maxWidth: '960px',      // max reasonable size
-    height: '500px',        // 16:9 ratio
-    margin: '0 auto',       // centers the player
-    display: 'block'
-  },
-  modal: {
-    width: '800px',        // accommodates max player width
-    maxHeight: '90vh',      // prevents overflow
-    columnRatio: '0/1',     // full width for player
-    playerHeight: '600px'   // matches player height
-  }
+    styles: {
+      thumbnail: { },
+      player: {
+        width: '700px',
+        maxWidth: '960px',
+        height: '500px',
+        margin: '0 auto',
+        display: 'block'
+      },
+      modal: {
+        width: '800px',
+        maxHeight: '90vh',
+        columnRatio: '0/1',
+        playerHeight: '600px'
+      }
+    }
   },
   {
     title: 'Komikero',
@@ -388,22 +474,22 @@
     profile: 'https://en.wikipedia.org/wiki/Gerry_Alanguilan',
     origin: 'Doroteo Gerardo N. Alanguilan Jr.',
     description: 'Hey Baby, meron akong museum sa San Pablo, Laguna. Punta ka!',
-    tags: ['ancient'],
+    tags: ['ancient'],  
     styles: {
-  },
-  player: {
-    width: '500px',          // fills container
-    maxWidth: '960px',      // max reasonable size
-    height: '500px',        // 16:9 ratio
-    margin: '0 auto',       // centers the player
-    display: 'block'
-  },
-  modal: {
-    width: '500px',        // accommodates max player width
-    maxHeight: '90vh',      // prevents overflow
-    columnRatio: '0/1',     // full width for player
-    playerHeight: '60px'   // matches player height
-  }
+      thumbnail: { },
+      player: {
+        width: '700px',
+        maxWidth: '960px',
+        height: '500px',
+        margin: '0 auto',
+        display: 'block'
+      },
+      modal: {
+        width: '800px',
+        maxHeight: '90vh',
+        columnRatio: '0/1',
+        playerHeight: '600px'
+      }}
 },
   {
     title: 'Kapeng matapang',
@@ -416,23 +502,23 @@
     styles: {
   thumbnail: {
     width: 'autopx',
-    height: '200px',
+    height: '150px',
     objectFit: 'center',
   objectPosition: 'center' 
    },
   player: {
-    width: '300px',         // reduced from 360px
-    maxWidth: '300px',      // reduced from 360px
-    height: '534px',        // 16:9 inverse ratio (reduced from 640px)
+    width: '360px',         // fixed width for vertical videos
+    maxWidth: '360px',      // ensures consistent size
+    height: '600px',        // 16:9 inverse ratio (perfect for mobile video)
     margin: '0 auto',       // centers the player
     display: 'block'
   },
   modal: {
-    width: '400px',         // reduced from 720px
-    maxHeight: '85vh',      // slightly smaller than before
+    width: '400px',         // wider modal to accommodate player + padding
+    maxHeight: '90vh',      // prevents overflow
     columnRatio: '0/1',     // full width for player
-    playerHeight: '400px'   // matches player height
-  }
+    playerHeight: '600px'   // matches player height
+  },
 }
 },
   {
@@ -478,7 +564,22 @@
     song: 'https://www.youtube.com/watch?v=DUmcisXhahQ&list=RDDUmcisXhahQ&start_radio=1',
     origin: 'Benjie Mallillin Pader',
     description: 'Eh Paano kung',
-    tags: ['urban legend'],
+    tags: ['urban legend'], 
+    styles: {
+      thumbnail: { },
+      player: {
+        width: '700px',
+        maxWidth: '960px',
+        height: '500px',
+        margin: '0 auto',
+        display: 'block'
+      },
+      modal: {
+        width: '800px',
+        maxHeight: '90vh',
+        columnRatio: '0/1',
+        playerHeight: '600px'
+      } }
   },
   {
     title: 'Harry Roque Boracay',
@@ -506,7 +607,7 @@
   modal: {
     width: '800px',        
     maxHeight: '90vh',      
-    columnRatio: '0/1',     
+    columnRatio: '0/1',
     playerHeight: '600px'   
   }
 }
@@ -537,7 +638,7 @@
   modal: {
     width: '800px',        
     maxHeight: '90vh',      
-    columnRatio: '0/1',     
+    columnRatio: '0/1',
     playerHeight: '600px'   
   }
 }
@@ -550,8 +651,23 @@
     image: './image/dennis.png',
     origin: 'Dennis Padilla',
     description: 'Hangkulet',
-    tags: ['celebrity']
-  },
+    tags: ['celebrity'],
+      styles: {
+      thumbnail: { },
+      player: {
+        width: '700px',
+        maxWidth: '960px',
+        height: '500px',
+        margin: '0 auto',
+        display: 'block'
+      },
+      modal: {
+        width: '800px',
+        maxHeight: '90vh',
+        columnRatio: '0/1',
+        playerHeight: '600px'
+      }}
+    },
   {
     title: 'Cringe Covid Dance',
     year: 2020,
@@ -565,7 +681,7 @@
     styles: {
   thumbnail: {
     width: 'auto',
-    height: '200px', 
+    height: '0x', 
     objectFit: 'center',
     objectPosition: 'center'
   },
@@ -579,7 +695,7 @@
   modal: {
     width: '800px',        
     maxHeight: '90vh',      
-    columnRatio: '0/1',     
+    columnRatio: '0/1',
     playerHeight: '600px'   
   }
 }
@@ -641,7 +757,7 @@
   modal: {
     width: '800px',        
     maxHeight: '90vh',      
-    columnRatio: '0/1',     
+    columnRatio: '0/1',
     playerHeight: '600px'   
   }
 }
@@ -672,7 +788,7 @@
   modal: {
     width: '800px',        
     maxHeight: '90vh',      
-    columnRatio: '0/1',     
+    columnRatio: '0/1',
     playerHeight: '600px'   
   }
 }
@@ -703,7 +819,7 @@
   modal: {
     width: '800px',        
     maxHeight: '90vh',      
-    columnRatio: '0/1',     
+    columnRatio: '0/1',
     playerHeight: '600px'   
   }
 }
@@ -734,7 +850,7 @@
   modal: {
     width: '800px',        
     maxHeight: '90vh',      
-    columnRatio: '0/1',     
+    columnRatio: '0/1',
     playerHeight: '600px'   
   }
 }
@@ -779,14 +895,13 @@
     origin: 'Doombringer',
     description: 'ewan ko rin parang tarantadao din (1)',
     tags: ['urban legend', 'tiktok'], 
-      
-      styles: {
- thumbnail: {
+    styles: {
+  thumbnail: {
     width: 'autopx',
-    height: '200px',
+    height: '150px',
     objectFit: 'center',
   objectPosition: 'center' 
-  },
+   },
   player: {
     width: '360px',         // fixed width for vertical videos
     maxWidth: '360px',      // ensures consistent size
@@ -883,52 +998,105 @@
   },
   {
     title: 'Happy NewYear Ebriwan',
-    year: 2015,
+    year: 2016,
     image: './image/happynewyear.jpg',
     link: 'https://www.facebook.com/MannyPacquiao/videos/1512832759020745/?extid=CL-UNK-UNK-UNK-IOS_GK0T-GK1C&ref=sharing',
     profile: '',
     origin: 'Manny Pacquiao',
     description: '',
     tags: ['celebrity'],
-    styles: {
-      thumbnail: {
-        height: '180px',
-        objectFit: 'cover'
-      },
-      player: {
-        width: '100%',
-        height: 'auto'
-      },
-      modal: {
-        width: '900px',
-        maxHeight: '90vh',
-        columnRatio: '45/55',
-        aspectRatio: '16/9'
-      }
+    portraitStyle: {
+      
     }
   },
-];
+{ title:'Wachafen Vella', year:2013, image:'./image/vella.webp', link:'https://youtu.be/OUi7SRE2pTk?si=wrc66o6R-aeRywEn&t=185', news:'https://www.facebook.com/share/v/1Gu8ERZNKs/', profile:'https://www.facebook.com/cristopher.d.ta/', origin:'Christoper Diwata', description:'I love blue collar people succeed', tags:['celebrity','look-alike'] },
+{ title:'Mateo Unboxing', year:2020, image:'./image/matteo.jpg', link:'https://youtu.be/bmOx1ylpI0Y?si=iUTPSkBDNn2QBQhB', profile:'', origin:'Mateo', description:'', tags:['celebrity'] },
+{ title:'SAKSI Dispersal', year:2010, image:'./image/fajatin.png', link:'https://youtu.be/uyAjT0gOFZ4?si=_Ys3VnICkHcK6F6j', profile:'https://youtu.be/ox7TFi3OBTk?si=NiDb_jITTPZdw5LJ', origin:'Michael Fajatin', description:'Nag disperse sila pagkatapos nito hindi na sila, nag away sa simula, pagkatapos nito nagkaroon sila ng pagaaway sa simula', tags:['news',] },
+{ title:'Classroom may batas', year:2020, image:'./image/kim.jpg', link:'https://youtu.be/o3OlCxCmSwc?si=DFI55K-4ggL1D-xt', song:'https://youtu.be/EmXK2DZP6eY?si=ng1tWkMb7JaSMHKI', origin:'Kim Chui', profile:'', description:'Pero pag sinabing pag, ng comply ka', tags:['song','celebrity',] },
+{ title:'Wooooooooow so Refreshing', 
+year:2014, 
+image:'./image/refresh.png', 
+sound:'https://youtu.be/8tY7uFL_1Ek?si=mG-8pD4s6FwXPk0C', 
+link:'https://fb.watch/D4GH1Kx3F9/?fs=e', 
+song: 'https://youtu.be/8tY7uFL_1Ek?si=NFDu82X1EGy8HYMf&t=87', 
+origin:'Wow Mali', 
+profile:'', 
+description:'', 
+tags:['sound','origin'], 
+  styles: {
+  thumbnail: {
+    width: 'autopx',
+    height: '150px',
+    objectFit: 'center',
+  objectPosition: 'center' 
+   },
+  player: {
+    width: '360px',         // fixed width for vertical videos
+    maxWidth: '360px',      // ensures consistent size
+    height: '600px',        // 16:9 inverse ratio (perfect for mobile video)
+    margin: '0 auto',       // centers the player
+    display: 'block'
+  },
+  modal: {
+    width: '400px',         // wider modal to accommodate player + padding
+    maxHeight: '90vh',      // prevents overflow
+    columnRatio: '0/1',     // full width for player
+    playerHeight: '600px'   // matches player height
+  },
+  
+} },
 
-// First define the landscape style constant
+{ title:'Gusto kong sumabog at sabihin ang mga masasamang words', year:2018, image:'./image/sumabog.png', link:'https://youtu.be/8ylELL7r7UE?si=UxUQM_XtGmpaOw6v&t=301', origin:'Kit Thompson', profile:'https://www.philstar.com/nation/2022/03/19/2168298/actor-held-assaulting-girlfriend', description:'', tags:['celebrity','show'] },
+{ title:'Majoha', year:2022, image:'./image/majoha.jpeg', link:'https://youtu.be/YY-PAxAqu98?si=IrdrHHS5bFQ8nSlp', news:'https://politiko.com.ph/2022/04/19/wag-basta-manghusga-briones-defends-quality-of-education-after-majoha-issue-on-pbb-teens/features/', origin:'PBB', profile:'', description:'', tags:['celebrity','show'] },
+{ title:'Maute Planning', year:2017, image:'./image/maute.png', link:'https://youtu.be/PzCj1IlXaiw?si=C0m-R8d7fflRGDtG', news:'https://www.abs-cbn.com/focus/06/18/17/brothers-who-brought-death-and-ruin-to-marawi', origin:'Maute Brothers', profile:'', description:'Girls sleep over vs Boys sleep over', tags:['criminal','news'] }
+    
+  
+
+]
+
+// Default landscape style (applies when a meme doesn't provide its own player styles)
 const landscapeStyle = {
   thumbnail: {
     width: 'auto',
-    height: '200px', 
+    height: '200px',
     objectFit: 'center',
     objectPosition: 'center'
   },
   player: {
-    width: '700px',          
-    maxWidth: '960px',      
-    height: '500px',        
-    margin: '0 auto',       
+    width: '700px',
+    maxWidth: '100%',
+    height: '400px',
+    margin: '0 auto',
     display: 'block'
   },
   modal: {
-    width: '800px',        
-    maxHeight: '90vh',      
-    columnRatio: '0/1',     
-    playerHeight: '600px'   
+    width: '800px',
+    maxHeight: '90vh',
+    columnRatio: '0/1',
+    playerHeight: '400px'
+  }
+};
+
+// And update the portraitStyle object for vertical videos
+const portraitStyle = {
+  thumbnail: {
+    width: 'auto',
+    height: '200px',
+    objectFit: 'center',
+    objectPosition: 'center'
+  },
+  player: {
+    width: '300px',         // good width for vertical videos
+    maxWidth: '300px',
+    height: '480px',        // reduced height to minimize blank space
+    margin: '0 auto',
+    display: 'block'
+  },
+  modal: {
+    width: '360px',         // reduced from 400px to be more compact
+    maxHeight: '85vh',
+    columnRatio: '0/1',
+    playerHeight: '480px'   // matches player height
   }
 };
 
@@ -1079,52 +1247,40 @@ if (activeTag && !(m.tags || []).includes(activeTag)) return false;
     // add helper to reliably render Facebook embeds (retry XFBML.parse then fallback to plugins iframe)
 function renderFacebookEmbed(container, fbUrl, playerStyle = {}) {
   if (!fbUrl || !container) return;
-
-  // Clear previous content
   container.innerHTML = '';
 
-  // create sized wrapper that embed will fill
+  // Check if this is a Reel to apply portrait styling
+  const isReel = /facebook\.com.*\/reel\//.test(fbUrl);
+  const style = isReel ? portraitStyle.player : playerStyle;
+
   const wrapper = document.createElement('div');
   wrapper.className = 'embed-container';
 
-  // determine height from playerStyle or modal CSS var
-  let height = (playerStyle && (playerStyle.height || playerStyle.playerHeight)) || '';
-  if (!height) {
-    const modalCard = container.closest('.modal-card');
-    if (modalCard) {
-      const cssH = getComputedStyle(modalCard).getPropertyValue('--modal-player-height') || '';
-      if (cssH) height = cssH.trim();
-    }
-  }
-  if (!height) height = '360px';
-  // normalize simple numeric values to px
-  if (/^\d+$/.test(String(height).trim())) height = height + 'px';
-  wrapper.style.minHeight = height;
+  // Apply styles directly to wrapper
+  wrapper.style.width = style.width || '100%';
+  wrapper.style.maxWidth = style.maxWidth || '960px';
+  wrapper.style.height = style.height || '400px';
+  wrapper.style.margin = '0 auto';
 
-  // Added mute=0 to enable sound by default
   const encoded = encodeURIComponent(fbUrl);
   const iframe = document.createElement('iframe');
   iframe.src = `https://www.facebook.com/plugins/video.php?href=${encoded}&show_text=false&autoplay=true&mute=0`;
   iframe.style.width = '100%';
   iframe.style.height = '100%';
   iframe.style.border = '0';
-  iframe.allow = 'autoplay; encrypted-media; picture-in-picture; microphone; camera';
+  iframe.allow = 'autoplay; encrypted-media; picture-in-picture';
   iframe.allowFullscreen = true;
 
-  // Modified close button to close modal
-  const closeBtn = document.createElement('button');
-  closeBtn.className = 'close-player-btn';
-  closeBtn.textContent = '✕ Close';
-  closeBtn.addEventListener('click', () => {
-    const modal = document.getElementById('modal');
-    if (modal) {
-      closeModal(); // Close entire modal
-    }
-  });
-
   wrapper.appendChild(iframe);
-  wrapper.appendChild(closeBtn);
   container.appendChild(wrapper);
+
+  // Update modal width for Reels
+  if (isReel) {
+    const modalCard = container.closest('.modal-card');
+    if (modalCard) {
+      modalCard.style.width = portraitStyle.modal.width;
+    }
+  }
 }
 
 // Updated openModal to follow vertical layout, and to populate links into #mLinks
@@ -1186,20 +1342,25 @@ function openModal(m) {
   const source = m.embedUrl || m.video || m.link;
   const info = getEmbedInfo(source);
 
-  if (info && info.type === 'facebook') {
-    renderFacebookEmbed(el.mPlayer, info.embedUrl, m.styles?.player || {});
-  } else if (info && info.type === 'video' && info.embedUrl) {
-    const playerWrap = document.createElement('div');
-    playerWrap.className = 'embed-container';
-    const p = Object.assign({}, m.styles?.player || {});
-    if (p.maxWidth) playerWrap.style.maxWidth = p.maxWidth;
-    if (p.width) playerWrap.style.width = p.width;
-    if (p.margin) playerWrap.style.margin = p.margin;
-    if (p.height) {
-      playerWrap.style.minHeight = (/^\d+$/.test(String(p.height)) ? String(p.height) + 'px' : p.height);
-      if (modalCard) modalCard.style.setProperty('--modal-player-height', playerWrap.style.minHeight);
-    }
+  // pick default player styles for video embeds when none provided
+  const defaultPlayer = (info && info.type === 'video') ? landscapeStyle.player : {};
+  const p = Object.assign({}, defaultPlayer, m.styles?.player || {});
 
+  // then use `p` instead of previous p usage:
+  // create a player wrapper element that will host the iframe or other embed UI
+  const playerWrap = document.createElement('div');
+  playerWrap.className = 'embed-container';
+
+  if (p.maxWidth) playerWrap.style.maxWidth = p.maxWidth;
+  if (p.width) playerWrap.style.width = p.width;
+  if (p.margin) playerWrap.style.margin = p.margin;
+  if (p.height) {
+    playerWrap.style.minHeight = (/^\d+$/.test(String(p.height)) ? String(p.height) + 'px' : p.height);
+    if (modalCard) modalCard.style.setProperty('--modal-player-height', playerWrap.style.minHeight);
+  }
+
+  // Render different embed types: video iframe, facebook plugin, or fallback link
+  if (info && info.type === 'video') {
     const iframe = document.createElement('iframe');
     iframe.src = info.embedUrl;
     iframe.frameBorder = '0';
@@ -1219,6 +1380,11 @@ function openModal(m) {
     playerWrap.appendChild(iframe);
     playerWrap.appendChild(closeBtn);
     el.mPlayer.appendChild(playerWrap);
+
+  } else if (info && info.type === 'facebook') {
+    // use the Facebook embed helper to render a proper FB player inside the modal
+    renderFacebookEmbed(el.mPlayer, info.embedUrl, p);
+
   } else {
     if (source) {
       const linkDiv = document.createElement('div');
