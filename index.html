@@ -16,11 +16,11 @@
     /* Dark theme variables (toggle by adding .dark on <html>) */
     :root.dark {
       --bg: #0b0f14;
-      --card: #2e3338;
-      --accent: #4f8cff;
-      --muted: #9aa6b2;
+      --card: #67686b4d;
+      --accent:   #4f5f77;
+      --muted: #7b858f;
       --maxw:1100px;
-      --text: #12b88f;
+      --text: #b6babe;
       --muted-contrast: #3d5a0f;
   .year-btn {
     background: #1e1e1e;
@@ -29,8 +29,8 @@
     }
      
   .year-btn.active {
-    background: #0b5cff;
-    color: rgb(9, 6, 145);
+    background: #465575;
+    color: rgb(0, 0, 0);
     border-color: #0b5cff;
   }
   }
@@ -345,7 +345,9 @@
         <img src="./image/Logo.png" alt="PK Logo" class="logo">
         <div class="brand">
           <h1>Pknow Your Memes</h1>
-          <p class="lead">A Website Dedicated to Archiving Filipino Internet Humor, Pop Culture, and Lost Media.</p>
+          <p class="lead">A Website Dedicated to  
+            Archiving Filipino Internet Humor, 
+                                                            Pop Culture, and Lost Media.</p>
         </div>
       </div>
       <div class="author-inline" aria-labelledby="aboutTitle">
@@ -366,7 +368,7 @@
 
     <div class="controls">
       <div class="search">
-        <p class="author-bio">Disclaimer: some data may not be 100% accuarate and I would appreciate it if you give me insights.</p>
+        <p class="author-bio">Disclaimer: some data may not be 100% accurate and I would appreciate it if you give me insights.</p>
         <label for="q" class="muted" style="display:none">Search</label>
         <input id="q" type="search" placeholder="Search meme title, tag, or origin" />
     
@@ -914,7 +916,7 @@ player: {
     image: './image/ogie.jpg',
     link: 'https://www.youtube.com/watch?si=ka-4uhN5xH829zxc&v=XQyADWqkBbo&feature=youtu.be',
     news: 'https://foodcartfranchisephilippines.com/2012/04/ogie-doggie-franchise/',
-    origin: '',
+    origin: 'Oggy and the Cockroaches',
     description: 'Ogie Doggie Hotdogs and Sauges Tindahang nalugi',
     tags: ['celebrity', 'sound', 'ads']
   },
@@ -1010,7 +1012,7 @@ player: {
     title: 'So Weird',
     year: 2018,
     image: './image/weird.jpg',
-    link: 'https://youtube.com/shorts/oXIaNK_ji7Y?si=Y-AdNaEHNaUR1vlZ',
+    link: 'https://youtu.be/PQOnud5GJqw?si=v9jycQ5f5wmejm7f',
     profile: 'https://www.youtube.com/@JaperSniperOfficial/shorts',
     origin: 'Japer Sniper',
     description: '',
@@ -1102,7 +1104,116 @@ player: {
     description: 'I put the new Forgis on the Jeep I trap until the bloody bottoms is underneath \'Cause all my players got it out the streets I keep a hundred racks inside my jeans',
     tags: ['song']
   },
-
+{ 
+  title:'Shakeys Incident', 
+  year:2021, 
+  image:'./image/shakeys.png', 
+  link:'https://fb.watch/D4ktDl4JgR/?fs=e', 
+  profile:'', 
+  origin:'James Caraan', 
+  description:'Umattend ako ng birthday party ng 1 year old sa Shakey\'s. Dumating yung mascot. Hindi pinasayaw. Yung host kumanta ng The Dawn. Hindi ko maintindihan ang nangyayari.', 
+  tags:['dark','deep web',], 
+  styles: {
+  player: {
+        width: '400px',        
+        maxWidth: '400px',     
+        height: '500px',       
+        margin: 'auto',      
+        display: 'block'
+      },
+      modal: {
+        width: '600px',        
+        maxHeight: 'auto',     
+        columnRatio: '0/1',    
+        playerHeight: 'auto'  
+      }
+    }
+},
+{ 
+  title:'Alamano', 
+  year:2016, 
+  image:'./image/alamano.png', 
+  link:'https://youtu.be/DNInQID8EY8?si=vr246gkF1p84pMPn&t=356', 
+  embedurl:'https://www.youtube.com/watch?v=l3c32xeo3xU',
+  profile:'', 
+  origin:'2016 Miting de Avance', 
+  description:'', 
+  tags:['politics'] 
+},
+{ 
+  title:'Aljur look alike', 
+  year:2014, 
+  image:'./image/aljur.jpg', 
+  link:'https://www.facebook.com/AAGV.PAGE', 
+  profile:'https://www.facebook.com/share/1Cpdyp5y7Z/', 
+  origin:'unknown', 
+  description:'i think fake lang to', 
+  tags:['celebrity','look-alike','image'] 
+},
+{ 
+  title:'Battousai', 
+  year:2016, 
+  image:'./image/battousai.png', 
+  link:'https://youtu.be/bUJWL2LU7yQ?si=YSnxeV3L6I4SSiZR&t=69', 
+  profile:'https://youtu.be/fhXvEjwXLf0?si=kQjcYCQZydWM8OZ8&t=310', 
+  origin:'Valentino', 
+  description:'baliktad yun, baliktad', 
+  tags:['news','criminal'] 
+},
+{ 
+  title:'Pano mo nasabi?', 
+  year:2018, 
+  image:'./image/pano.jpg', 
+  news:'https://youtu.be/kCqS63E5G1c?si=yvTGkp9cjB6Z33hb', 
+  link:'https://www.youtube.com/watch?v=0hOVfK0WkDg', 
+  profile:'https://youtube.com/shorts/4IwqQIPQZKY?si=LXdHvNXkEJ1EOEAf', 
+  origin:'Robert Nocos', 
+  description:'Ang lala pala ng ginawa nito. Sya lang tao sa mundo.', 
+  tags:['news','criminal'] 
+},
+{ 
+  title:'Di pa ba sapat narinig nyo?', 
+  year:2012, 
+  image:'./image/comment.png', 
+  news:'https://newsinfo.inquirer.net/307810/massacre-suspect-dies-in-mpd-car', 
+  embedUrl:'https://youtu.be/t7rvZNIMKhs?si=49SvDDkdUh9VfbWJ', 
+  link:'https://www.youtube.com/watch?v=doRXzDRztpo',
+  profile:'', 
+  origin:'Nestor Delizalde Jr.', 
+  description:'', 
+  tags:['news','criminal'] 
+},
+{ 
+  title:'Demonyong Kamay', 
+  year:2018, 
+  image:'./image/kamay.png', 
+  link:'https://youtu.be/N2wq_Sf-LDU?si=XmlTXEKYqfiE9OjD', 
+  embedUrl:'https://www.youtube.com/watch?v=4DQ9N1mbfcI',
+  profile:'', 
+  origin:'Edwardo Valencio', 
+  description:'Umiral siguro kademonyohan ng aking kamay, gumalaw', 
+  tags:['news','criminal'] 
+},
+{ 
+  title:'Anak, itabi mo ako na', 
+  year:2009, 
+  image:'./image/mar.jpg', 
+  link:'https://youtu.be/BUqw7j6_hZA?si=t68h_PAJzeahMceK', 
+  profile:'', 
+  origin:'Mar Roxas/Mr. Palengke', 
+  description:'Mar Roxas campign ad for vice presidency', 
+  tags:['politics','news'] 
+},
+{ 
+  title:'Mar Roxas Traffic', 
+  year:2009, 
+  image:'./image/traffic.jpg', 
+  link:'https://youtu.be/SFXDprPullo?si=reipF_nZVJE9OmG8', 
+  news:'https://web.senate.gov.ph/press_release/2009/0727_roxas4.asp', 
+  origin:'SONA 2009', 
+  description:'Manuel Araneta Roxas II is a Filipino politician who served as a senator of the Philippines from 2004 to 2010. He is the grandson and namesake of former Philippine President Manuel Roxas', 
+  tags:['politics','news'] 
+},
   {
     title: 'Happy NewYear Ebriwan',
     year: 2016,
@@ -1401,11 +1512,27 @@ tags:['sound','origin'],
     title: 'Kahawig mo si Joao',
     year: 2021,
     image: './image/joao.jpg',
-    link: 'https://vt.tiktok.com/ZSyjrb7HP/',
+    link: 'https://www.tiktok.com/@nobumiiii/video/6938406187943595265?_r=1&_t=ZS-910vGLbcVZU',
     origin: 'Jonglay Coleta',
     profile: 'https://www.tiktok.com/@jonglaycoleta?_r=1&_t=ZS-910v8pzksFR',
+    more1: '',
     description: 'shout out din sayo, kahawig mo si Joao, cute mo pa din lods',
-    tags: ['tiktok']
+    tags: ['tiktok'],
+    styles: {
+      player: {
+        width: '400px',        // fixed width for vertical videos
+        maxWidth: '400px',     // ensures consistent size
+        height: '600px',       // tall 9:16 fit
+        margin: '0 auto',      // centers the player
+        display: 'block'
+      },
+      modal: {
+        width: '600px',        // slightly wider modal
+        maxHeight: '90vh',     // prevents overflow
+        columnRatio: '0/1',    // full width for player
+        playerHeight: '200px'  // matches player height
+      }
+    }
   },
   {
     title: 'Angel na nagmumura',
@@ -1958,7 +2085,7 @@ Diay kadto makahilo... low low low...`,
     title: 'Ptangina Ano ba to!!',
     year: 2008,
     image: './image/rox.jpg',
-    link: 'https://youtu.be/VhiLKsQgVNE?si=Xextc0Bvl3s5wmn2',
+    embedUrl: 'https://youtu.be/VhiLKsQgVNE?si=Xextc0Bvl3s5wmn2',
     video: 'https://youtu.be/6TldszXmG80?si=oSkeRrJo6K0sqPot',
     origin: 'Mar Roxas',
     profile: '',
@@ -2199,7 +2326,7 @@ Diay kadto makahilo... low low low...`,
     year: 2021,
     image: './image/cristine.jpg',
     link: 'https://www.facebook.com/groups/mainpopgirls/posts/594764305176027/',
-    news: 'https://www.youtube.com/watch?embeds_referring_euri=https%3A%2F%2Fwww.google.com%2Fsearch%3Fsca_esv%3D47764a9b72b3b136%26sxsrf%3DAE3TifNd2aMr5YLaxvm8epZEcDbkFJqLQw%3A1762085186352%26q%3Dchristine%2Bdacera&source_ve_path=Mjg2NjQsMTY0NTAz&v=rECI7yHmr84&feature=youtu.be',
+    embedUrl: 'https://www.youtube.com/watch?embeds_referring_euri=https%3A%2F%2Fwww.google.com%2Fsearch%3Fsca_esv%3D47764a9b72b3b136%26sxsrf%3DAE3TifNd2aMr5YLaxvm8epZEcDbkFJqLQw%3A1762085186352%26q%3Dchristine%2Bdacera&source_ve_path=Mjg2NjQsMTY0NTAz&v=rECI7yHmr84&feature=youtu.be',
     origin: 'Cristine Dacera',
     profile: '',
     description: 'Tragedy turned meme??',
@@ -2286,8 +2413,1314 @@ Diay kadto makahilo... low low low...`,
     profile: 'https://www.facebook.com/diwataparesoverload?',
     description: '',
     tags: ['viral','news']
-  }
+  },
 
+  { 
+    title: 'Harry Roque Spacing out', 
+    year: 2020, 
+    image: './image/harr.jpg', 
+    link: 'https://youtu.be/jlGo0rpEUpQ?si=gZfjR5pyMiHuLUb0', 
+    origin: 'Harry Roque', 
+    profile: '', 
+    description: '', 
+    tags: ['news', 'politics'] 
+  },
+  { 
+    title: 'Harry Roque Funny Face', 
+    year: 2021, 
+    image: './image/har.png', 
+    news: 'https://www.onenews.ph/articles/viral-roque-s-antics-as-he-refuses-to-name-cabinet-members-he-abhors', 
+    link: 'https://youtu.be/mUERUxZs1oM?si=fkJAYWOGUtBv3Mrx&t=331', 
+    embedUrl:'https://www.youtube.com/watch?v=AAoOToPjqW8',
+    origin: 'Harry Roque', 
+    profile: '', 
+    description: '', 
+    tags: ['politics', 'news'] 
+  },
+  { 
+    title: 'Dunk it Jonathan', 
+    year: 2016, 
+    image: './image/jon.jpg', 
+    link: 'https://www.youtube.com/watch?v=mLgLTByqXSo', 
+    origin: 'Unknown', 
+    profile: '', 
+    description: 'Court of appeal, Pumanaw ka Jesus', 
+    tags: ['sports', 'mythology', 'sound'],
+    styles: {
+      player: {
+        width: '400px',        
+        maxWidth: '400px',     
+        height: '600px',       
+        margin: '0 auto',      
+        display: 'block'
+      },
+      modal: {
+        width: '600px',        
+        maxHeight: '80vh',     
+        columnRatio: '0/1',    
+        playerHeight: '50px'  
+      }
+    } 
+  },
+  { 
+    title: 'Nasaktan moko diba', 
+    year: 2019, 
+    image: './image/saktan.png', 
+    song: 'https://vt.tiktok.com/ZSy2wN7hm/', 
+    link: 'https://vt.tiktok.com/ZSy2wdcNm/', 
+    embedUrl: 'https://www.tiktok.com/@jinchang_00/video/7242793642044214533?is_from_webapp=1&sender_device=pc&web_id=7236580738239649030',
+    more1:'https://www.tiktok.com/@cedo7_/video/7434913569042337031?q=stitch%20nasaktan%20moko%20diba&t=1762786525233',
+    origin: 'Unknown Ariel Maceda', 
+    profile: '', 
+    description: 'Diko alam kung sino sya talaga, pero naka lagay yan as tiktok ID nya', 
+    tags: ['urban legend', 'sound'],
+    styles: {
+      player: {
+        width: '400px',        
+        maxWidth: '400px',     
+        height: '600px',       
+        margin: '0 auto',      
+        display: 'block'
+      },
+      modal: {
+        width: '600px',        
+        maxHeight: '80vh',     
+        columnRatio: '0/1',    
+        playerHeight: '50px'  
+      }
+    }
+  },
+  { 
+    title: 'Bat kamukha ko yang bata?', 
+    year: 2023, 
+    image: './image/batta.jpg', 
+    link: 'https://www.tiktok.com/@mavelaying/video/7192525381994302746?_r=1&_t=ZS-910j2eCjU16', 
+    origin: 'Mavelying', 
+    profile: 'https://www.tiktok.com/@mavelaying?_r=1&_t=ZS-910j6nYMNYi', 
+    description: 'How dare you to ask me, Do you know how hard to raise a child when you’re deprived of everything', 
+    tags: ['tiktok', 'urban legend'],
+    styles: {
+      player: {
+        width: '400px',        
+        maxWidth: '400px',     
+        height: '600px',       
+        margin: '0 auto',      
+        display: 'block'
+      },
+      modal: {
+        width: '600px',        
+        maxHeight: '80vh',     
+        columnRatio: '0/1',    
+        playerHeight: '50px'  
+      }
+    }
+  },
+  { 
+    title: 'Lakad Matatag Normal Walker ver.', 
+    year: 2023, 
+    image: './image/lakad.png', 
+    link: 'https://fb.watch/D4vVbtZNLy/?fs=e', 
+    origin: 'Unknown', 
+    profile: '', 
+    description: '', 
+    tags: ['games', 'sound'],
+    styles: {
+      player: {
+        width: '400px',        
+        maxWidth: '400px',     
+        height: '600px',       
+        margin: '0 auto',      
+        display: 'block'
+      },
+      modal: {
+        width: '600px',        
+        maxHeight: '80vh',     
+        columnRatio: '0/1',    
+        playerHeight: '50px'  
+      }
+    }
+  },
+  { 
+    title: 'Naka video', 
+    year: 2024, 
+    image: './image/pamile.png', 
+    link: 'https://www.tiktok.com/@clarisse5007/video/7381948627196890373?_r=1&_t=ZS-910jO5Id5kL', 
+    origin: 'Clarisse', 
+    profile: 'https://www.tiktok.com/@clarisse5007?_r=1&_t=ZS-910jQKdgczM', 
+    description: '', 
+    tags: ['tiktok', 'image'],
+    styles: {
+      player: {
+        width: '400px',        
+        maxWidth: '400px',     
+        height: '600px',       
+        margin: '0 auto',      
+        display: 'block'
+      },
+      modal: {
+        width: '600px',        
+        maxHeight: '80vh',     
+        columnRatio: '0/1',    
+        playerHeight: '50px'  
+      }
+    }
+  },
+  { 
+    title: 'Kawayan at Pepe ni Rone', 
+    year: 2024, 
+    image: './image/pepenironi.png', 
+    link: 'https://www.tiktok.com/@slay00009/video/7441773397404585217?_r=1&_t=ZS-910jT6Y3Iqj', 
+    origin: 'Unknown', 
+    profile: '', 
+    description: '', 
+    tags: ['tiktok', 'sound'],
+    styles: {
+      player: {
+        width: '400px',        
+        maxWidth: '400px',     
+        height: '600px',       
+        margin: '0 auto',      
+        display: 'block'
+      },
+      modal: {
+        width: '600px',        
+        maxHeight: '80vh',     
+        columnRatio: '0/1',    
+        playerHeight: '50px'  
+      }
+    }
+  },
+  { 
+    title: 'Lumpiang Pisot', 
+    year: 2022, 
+    image: './image/pisot.png', 
+    link: 'https://phcorner.org/threads/shanghai-na-pisot.1461570/', 
+    origin: 'Unknown', 
+    profile: '', 
+    description: 'Hahaha supot', 
+    tags: ['image'] 
+  },
+  { 
+    title: 'Renejay woh woh', 
+    year: 2020, 
+    image: './image/rene.jpg', 
+    link: 'https://www.tiktok.com/@renejaybarcarse/video/6902283960731077889?_r=1&_t=ZS-910jxGeqSQv', 
+    origin: 'Renejay', 
+    profile: 'https://www.tiktok.com/@renejaybarcarse?_r=1&_t=ZS-910jzW6hCL6', 
+    description: 'Baka Renejay to', 
+    tags: ['tiktok', 'urban legend'],
+    styles: {
+      player: {
+        width: '400px',        
+        maxWidth: '400px',     
+        height: '600px',       
+        margin: '0 auto',      
+        display: 'block'
+      },
+      modal: {
+        width: '600px',        
+        maxHeight: '80vh',     
+        columnRatio: '0/1',    
+        playerHeight: '50px'  
+      }
+    }
+  },
+  { 
+    title: 'Baka Renejay toh', 
+    year: 2020, 
+    image: './image/baka.jpg', 
+    embedUrl: 'https://www.google.com/search?q=baka+renejay+to&sca_esv=3f626f5782a50780&udm=2&biw=1920&bih=991&sxsrf=AE3TifNC6JEJ0TQMliQHPxbLGqM2TXdz1Q%3A1762787570159&ei=8gASaY27CZfO2roPrP_10Qw&oq=baka+re&gs_lp=Egtnd3Mtd2l6LWltZyIHYmFrYSByZSoCCAAyChAAGIAEGEMYigUyBRAAGIAEMgoQABiABBhDGIoFMgUQABiABDIFEAAYgAQyBRAAGIAEMgUQABiABDIFEAAYgAQyBRAAGIAEMgUQABiABEjyFVDJCFiBD3AEeACQAQCYAVOgAZcEqgEBN7gBA8gBAPgBAZgCC6ACyATCAgQQABgewgIHECMYJxjJAsICBBAAGAPCAgsQABiABBixAxiDAcICCBAAGIAEGLEDwgIOEAAYgAQYsQMYgwEYigWYAwCIBgGSBwIxMaAHsieyBwE3uAe9BMIHBTAuNC43yAck&sclient=gws-wiz-img#vhid=EfXqJ2QJk4ANWM&vssid=mosaic', 
+    origin: 'Rene Jay', 
+    profile: 'https://www.tiktok.com/@renejaybarcarse', 
+    description: 'Baka Renejay to', 
+    tags: ['tiktok', 'urban legend','sound'],
+    styles: {
+      player: {
+        width: '400px',        
+        maxWidth: '400px',     
+        height: '600px',       
+        margin: '0 auto',      
+        display: 'block'
+      },
+      modal: {
+        width: '600px',        
+        maxHeight: '80vh',     
+        columnRatio: '0/1',    
+        playerHeight: '50px'  
+      }
+    }
+  },
+  { 
+    title: 'Snake Dragon', 
+    year: 2022, 
+    image: './image/snake.jpg', 
+    link: 'https://www.tiktok.com/@fairouz_ai/video/7162556313644420379?_r=1&_t=ZS-910kaFSQKRg', 
+    origin: 'Unknown Kapitan D', 
+    profile: '', 
+    description: '', 
+    tags: ['urban legend'],
+    styles: {
+      player: {
+        width: '400px',        
+        maxWidth: '400px',     
+        height: '600px',       
+        margin: '0 auto',      
+        display: 'block'
+      },
+      modal: {
+        width: '600px',        
+        maxHeight: '80vh',     
+        columnRatio: '0/1',    
+        playerHeight: '50px'  
+      }
+    }
+  },
+  { 
+    title: 'Kween Leng Leng', 
+    year: 2020, 
+    image: './image/kweenlengleng.jpg', 
+    link: 'https://www.youtube.com/watch?v=4LE9OFDrMTE&t=7s', 
+    origin: 'Juliana Grace Celestra', 
+    profile: 'https://www.tiktok.com/@kweenleng5?_r=1&_t=ZS-910kpQgI79x', 
+    description: 'Asfaik, sumikat sya dahil sa group na Main Pop Girl group sa FB, meron din syang isang fb na merong 1k profile pictures, tsaka andami nyang page at facebook', 
+    tags: ['celebrity', 'tiktok','Legend'] 
+  },
+  { 
+    title: 'Kween Leng Leng Ariana Grande', 
+    year: 2020, 
+    image: './image/ariana.jpg', 
+    embedUrl:'https://www.tiktok.com/@nilagangpuke69/video/7555019911647464711',
+    link: 'https://youtu.be/9vb64KhoOmk?si=ZrcYbRXN-92UIDnh', 
+    origin: 'Juliana Grace Celestra', 
+    profile: 'https://www.facebook.com/kween.lengleng.181475?', 
+    description: '', 
+    tags: ['sound', 'tiktok'],
+    styles: {
+      player: {
+        width: '400px',        
+        maxWidth: '400px',     
+        height: '600px',       
+        margin: '0 auto',      
+        display: 'block'
+      },
+      modal: {
+        width: '600px',        
+        maxHeight: '80vh',     
+        columnRatio: '0/1',    
+        playerHeight: '50px'  
+      }
+    }
+  },
+  { 
+    title: 'Basers Bassers', 
+    year: 2022, 
+    image: './image/', 
+    news: 'https://floptok.fandom.com/wiki/Pandemic_Girl', 
+    link: 'https://vt.tiktok.com/ZSyj1yaS3/', 
+    origin: 'Maricon Panizales / Pandemic Girl', 
+    profile: 'https://www.tiktok.com/@pandemicgirl26?_r=1&_t=ZS-910lMDyjXK1', 
+    description: 'Scroll Ignore Block', 
+    tags: ['parody', 'tiktok', 'urban legend', 'song'] 
+  },
+  { 
+    title: 'Paorder naman ng sapsuy', 
+    year: 2020, 
+    image: './image/', 
+    news: 'https://floptok.fandom.com/wiki/Pandemic_Girl', 
+    link: 'https://vt.tiktok.com/ZSyj1frMv/', 
+    origin: 'Maricon Panizales / Pandemic Girl', 
+    profile: 'https://www.tiktok.com/@pandemicgirl26?_r=1&_t=ZS-910lMDyjXK1', 
+    description: '', 
+    tags: ['song', 'sound', 'tiktok', 'urban legend'] 
+  },
+  { 
+    title: 'Baklang Naglalaptop', 
+    year: 2010, 
+    image: './image/laptop.jpg', 
+    link: 'https://youtu.be/eRBlImGcXxs?si=1JZV1THDAe6-tJR0', 
+    origin: 'Unknown Jerome', 
+    profile: '', 
+    description: 'Pwede bang mag tanong? Ganyan ba dapat mga nagtatanong?', 
+    tags: ['gay humor', 'ancient'] 
+  },
+  { 
+    title: 'Bahog B*lat', 
+    year: 2017, 
+    image: './image/bahog.jpg', 
+    news: 'https://memecaptor.wordpress.com/2018/01/08/reflections-on-the-bahog-bilat-meme/', 
+    video: 'https://youtu.be/587vwz_HdFc?si=WgEQohDl0wP0mWaB', 
+    link: 'https://fb.watch/D4yblujO2I/?fs=e', 
+    origin: 'Live TV5 interview', 
+    profile: '', 
+    description: '', 
+    tags: ['mythology', 'sound', 'mura', 'bisaya'] 
+  },
+  { 
+    title: 'Disco Moreno vs Alfredy', 
+    year: 2012, 
+    image: './image/', 
+    link: 'https://youtu.be/b7oaaBh4XSM?si=rOU4t71hJld8FTT1', 
+    origin: 'Sir Rex', 
+    profile: 'https://youtube.com/@sirrexkantatero?si=NsVZI7Tz1sNdyMD6', 
+    description: 'Control your tempre', 
+    tags: ['politics', 'song', 'parody'] 
+  },
+  { 
+    title: 'Family Planning', 
+    year: 2014, 
+    image: './image/', 
+    news: 'https://pif.fandom.com/wiki/Department_of_Health_(Philippines)_-_Family_Planning_TVC_(2014,_Philippines)', 
+    link: 'https://youtu.be/2pNWpojebjc?si=gOOsC1oT8Ws0vFEw', 
+    origin: 'DOH', 
+    profile: 'https://fb.watch/D4zLJzI4-V/?', 
+    description: 'Isang taon palang ako nasundan na ni toto', 
+    tags: ['song', 'politics', 'ads'] 
+  },
+  { 
+    title: 'James Reid Nahulog', 
+    year: 2014, 
+    image: './image/', 
+    link: 'https://youtu.be/HxFpVnm7PpY?si=vUt2_30yOzeHq9Mp', 
+    origin: 'James Reid', 
+    profile: 'https://youtu.be/T0_WBdkEaUE?si=W_irfY5Rfkw-nrxx', 
+    description: '', 
+    tags: ['celebrity'],
+  },
+  { 
+    title: 'Kathryn look alike', 
+    year: 2018, 
+    image: './image/', 
+    link: 'https://youtu.be/rEE1-fxIn9Q?si=YFgF2MRpP9jkOyeu', 
+    origin: 'Patricia Letran', 
+    profile: 'https://vt.tiktok.com/ZSyBtgRra/', 
+    description: 'Resurgence in November 2025', 
+    tags: ['celebrity', 'look-alike'] 
+  },
+  { 
+    title: 'Just Binggo Plus my Location Sir', 
+    year: 2025, 
+    image: './image/', 
+    link: '', 
+    news: 'https://youtu.be/BStMecBV95I?si=RWRtFGkKJDSwhbS6', 
+    origin: 'Razzie Binx', 
+    profile: 'https://www.facebook.com/RealRazzieBinx?', 
+    description: '', 
+    tags: ['ads', 'games'] 
+  },
+  { 
+    title: 'Just Bomb my Location Sir', 
+    year: 2017, 
+    image: './image/', 
+    link: 'https://youtu.be/Dql5AJZMuTE?si=RX3wcR7zEwyaWRzp', 
+    origin: 'Dhan Ryan Bayot', 
+    profile: '', 
+    description: 'People are using his quote as memes', 
+    tags: ['dark', 'politics'] 
+  },
+  { 
+    title: 'Just Prince Umpad my Donation Sir', 
+    year: 2025, 
+    image: './image/', 
+    link: 'https://www.facebook.com/100000338780278/posts/pfbid02jCBa3wqhaKTaeQP88xsN3wSB9EzibsCdqVDAKbwe46fd6PkiD67Rr3dEKVuxD7Mnl/?', 
+    news: 'https://youtu.be/4cDxeb-CX-s?si=dzuenbUI44t3tzg4', 
+    origin: 'Prince Umpad', 
+    profile: 'https://www.facebook.com/princeumpadxo?', 
+    description: '', 
+    tags: ['criminal'] 
+  },
+  { 
+    title: 'Teka lng madam di maka pokus ehhhh', 
+    year: 2018, 
+    image: './image/', 
+    link: 'https://youtu.be/kEb92RrWBbk?si=MpZzuBDQmxUtOn9r', 
+    origin: 'Aera', 
+    profile: '', 
+    description: '', 
+    tags: ['games', 'mythology'] 
+  },
+  { 
+    title: 'Duterte Computer', 
+    year: 2009, 
+    image: './image/', 
+    link: 'https://www.facebook.com/rodyduterte/photos/a.381886225424/381889510424/?type=3', 
+    origin: 'Rody Duterte', 
+    profile: '', 
+    description: '“Search mo Peppa Pig Bold”', 
+    tags: ['politics', 'image', 'games'] 
+  },
+  { 
+    title: 'We are Electric', 
+    year: 2011, 
+    image: './image/', 
+    link: 'https://youtu.be/afcFRz81yTg?si=TNrkjxzqRNxTmm7a', 
+    origin: 'Flying Steps', 
+    profile: 'https://youtube.com/channel/UCW8TKBmVFzSiF7AHxqwM82Q?si=rD2HecTcWdtPvHhW', 
+    description: 'Dota theme song', 
+    tags: ['song', 'games'] 
+  },
+  { 
+    title: 'One Direction - One Thing (Filipino Version)', 
+    year: 2010, 
+    image: './image/', 
+    link: 'https://fb.watch/D87eDz4pzK/?', 
+    origin: 'Unknown', 
+    profile: '', 
+    description: '', 
+    tags: ['song', 'parody', 'ancient'] 
+  },
+  { 
+    title: 'Pangadyi sa usa ka Dota player', 
+    year: 2017, 
+    image: './image/', 
+    link: 'https://youtu.be/QLV6otqbgVg?si=JyLEo-ZX7ATDKbih', 
+    origin: 'Unknown', 
+    profile: '', 
+    description: '', 
+    tags: ['games'] 
+  },
+  { 
+    title: 'Dota Trashtalk', 
+    year: 2013, 
+    image: './image/', 
+    link: 'https://youtu.be/QAauESwMVmI?si=39wzKgOslRNMbbRZ', 
+    origin: 'Unknown', 
+    profile: '', 
+    description: '', 
+    tags: ['games', 'mura'] 
+  },
+  { 
+    title: 'TT na ituuuu', 
+    year: 2013, 
+    image: './image/', 
+    link: 'https://youtu.be/QZ1kiKPKZzc?si=8_PiS2or7MPuOMSg', 
+    origin: 'Unknown', 
+    profile: '', 
+    description: '', 
+    tags: ['games', 'mura'] 
+  },
+  { 
+    title: 'Moskov Bisayang ML', 
+    year: 2021, 
+    image: './image/', 
+    link: 'https://youtu.be/HFKmQ7myCNU?si=4uGQ85RXSmbRdfPw', 
+    origin: 'Unknown', 
+    profile: '', 
+    description: 'Dagan jud Dagan Lancelot, igo bang, kusarat', 
+    tags: ['sound', 'games', 'bisaya'] 
+  },
+  { 
+    title: 'Panatang maka ML', 
+    year: 2021, 
+    image: './image/', 
+    link: 'https://youtu.be/Gvat1pzO_aM?si=AcL3sF7ClHdh2Yhz', 
+    origin: 'Unknown', 
+    profile: '', 
+    description: '', 
+    tags: ['games', 'sound'] 
+  },
+  { 
+    title: 'Carrot Man', 
+    year: 2016, 
+    image: '', 
+    link: 'https://youtu.be/ZjSUP5AjE5w?si=JXS2ygldyfszjr4r', 
+    origin: 'Jeric Sigmaton', 
+    profile: '', 
+    description: '', 
+    tags: ['image', 'viral'] 
+  },
+  { 
+    title: 'Hinarot Pusong Malambot Sabay Sabing Charot', 
+    year: 2020, 
+    image: './image/', 
+    link: 'https://youtube.com/shorts/0HilrlU1rjQ?si=kovPKD2dvwuES0X5', 
+    origin: 'Unknown', 
+    profile: '', 
+    description: '', 
+    tags: ['song', 'parody'] 
+  },
+  { 
+    title: 'Xanthole Herbal Capsule Song', 
+    year: 2014, 
+    image: './image/', 
+    news: 'https://www.fda.gov.ph/fda-advisory-no-2023-0590-public-health-warning-against-the-purchase-and-consumption-of-the-unregistered-food-supplement-unbranded-malunggay-with-mangosteen-also-known-as-xanthone-plus-no-appr/', 
+    link: 'https://youtu.be/CAZuBPQ62rk?si=LpeLjIuc2SzyYjd_', 
+    origin: 'Misc Television', 
+    profile: '', 
+    description: 'Ang mga bukol bukol sarap tunawon', 
+    tags: ['song', 'parody', 'ads', 'bisaya'] 
+  },
+  { 
+    title: 'Sid Panyawa Herbal Capsule', 
+    year: 2021, 
+    image: './image/', 
+    link: 'https://www.reddit.com/r/NANIKPosting/s/Pfu3uyeq0U', 
+    origin: 'Unknown Antonio Dela Cruz', 
+    profile: '', 
+    description: '', 
+    tags: ['tiktok', 'sound', 'ads'] 
+  },
+  { 
+    title: 'Wala na Finish na', 
+    year: 2015, 
+    image: './image/', 
+    link: 'https://youtu.be/_pWuIbaBPTQ?si=opTQuAe4J_rU-bbK', 
+    news: 'https://m.facebook.com/story.php?story_fbid=pfbid02CvQt8tc81xri5QArAuT4Q4RkhhxBrFa5MC8JHjpUcQP2agb43VkUmDZFGjfxe9sxl&id=100063909016178', 
+    origin: 'Bethoven Delmar Jr.', 
+    profile: '', 
+    description: '', 
+    tags: ['criminal', 'news'] 
+  },
+  { 
+    title: 'Dos Caliente', 
+    year: 2016, 
+    image: './image/', 
+    link: 'https://youtu.be/OWOrgUmKPqg?si=MijLuYHCre1AaCRM', 
+    origin: 'Enrique Gil', 
+    profile: '', 
+    description: 'Actually Chavacano to', 
+    tags: ['bisaya', 'song', 'celebrity', 'dance'] 
+  },
+
+  {
+    title: 'Oha Oha Kaya mo ba to',
+    year: 2013,
+    image: './image/',
+    link: 'https://youtu.be/h4N9lloAYY0?si=jRFD0cfcy2EQ6l81',
+    origin: 'Enrique Gil',
+    profile: '',
+    description: '',
+    tags: ['song', 'celebrity', 'dance']
+  },
+  {
+    title: 'DingDong Dantes pose',
+    year: 2008,
+    image: './image/',
+    link: 'https://www.flickr.com/photos/33334821@N03/3106511157',
+    origin: 'Bench',
+    profile: '',
+    description: '',
+    tags: ['celebrity', 'image']
+  },
+  {
+    title: 'Dynamite by Micky Mouse',
+    year: 2023,
+    image: './image/',
+    link: 'https://fb.watch/D89PZY3qBq/?fs=e',
+    origin: 'JM Onella',
+    profile: 'https://www.facebook.com/thekingofpinoypop?',
+    description: '',
+    tags: ['song', 'parody']
+  },
+  {
+    title: 'Ang sarap mo Pia',
+    year: 2020,
+    image: './image/',
+    link: 'https://youtu.be/2H8DgYrU2Sw?si=90SLAlOMV9NSE0kF',
+    origin: 'Mike Enrique',
+    profile: '',
+    description: '',
+    tags: ['news']
+  },
+  {
+    title: 'Galaw Pilipinas',
+    year: 2021,
+    image: './image/',
+    link: 'https://youtu.be/hmJQbCYEzFg?si=rfSHQ8DgOb8-wHFs',
+    origin: '',
+    profile: '',
+    description: '',
+    tags: ['dance']
+  },
+  {
+    title: 'Milo Champ',
+    year: 2015,
+    image: './image/',
+    link: 'https://youtu.be/YcSSfUz69fw?si=YbgdzU5MUQotl4jP',
+    origin: 'MILO',
+    profile: '',
+    description: '',
+    tags: ['dance', 'ads']
+  },
+  {
+    title: 'Nestle Dance',
+    year: 2016,
+    image: './image/',
+    link: 'https://youtu.be/aPq4HonfEPA?si=a3qqVT6jQkCgqi6a',
+    origin: '',
+    profile: '',
+    description: '',
+    tags: ['dance', 'ads']
+  },
+  {
+    title: 'Girl in the mirror',
+    year: 2018,
+    image: './image/',
+    link: 'https://youtu.be/XKTzyTGYgaY?si=7lDzdV2Er9VuC1Fn',
+    origin: 'Live Love Party',
+    profile: '',
+    description: '',
+    tags: ['dance']
+  },
+  {
+    title: 'Original Laughing Soundtrack (Attumalaca)',
+    year: 2003,
+    image: './image/',
+    news: 'https://knowyourmeme.com/memes/atumalaca-acumalaka',
+    link: 'https://youtu.be/NPHYQ6c8a3o?si=FK6eSiR5tzqekFgE',
+    video: 'https://youtu.be/0ZO4uEtj6H4',
+    origin: 'Unknown Greek Radio',
+    profile: '',
+    description: 'Reddit says Attumalaca means “What a wanker” in Greece but I always thought it was Bisaya: “Naka tawa la ako”',
+    tags: ['sound', 'ancient']
+  },
+  {
+    title: 'She She Song',
+    year: 2016,
+    image: './image/',
+    news: 'https://youtu.be/QOI3x3gNJZ4?si=DwuN5AubjnDp-QQf',
+    link: 'https://youtu.be/RuP8P7MZ1Pw?si=2hvTn3us6gsxQZtG',
+    origin: 'Kage Untalan',
+    profile: 'https://www.instagram.com/kageuntalanofficial?igsh=cGNpYTE0ZHJjenVy',
+    description: '',
+    tags: ['song', 'mythology', 'viral']
+  },
+  {
+    title: 'Siomai Rice Gusto ko Ikaw',
+    year: 2019,
+    image: './image/',
+    link: 'https://youtu.be/uAsTbspFrfI?si=aubi_wEUkyv7xjHe',
+    origin: 'Lilay',
+    profile: 'https://youtube.com/@lilay23?si=7URixddIPOWUAvRg',
+    description: '',
+    tags: ['sound', 'mythology']
+  },
+  {
+    title: 'Siomai Rice',
+    year: 2019,
+    image: './image/',
+    link: 'https://youtu.be/z0TVpqicZ80?si=zSd94E2Kwafp2vQD',
+    origin: 'Denzel aka Succ',
+    profile: '',
+    description: '',
+    tags: ['song', 'mythology']
+  },
+  {
+    title: 'Makulay ang Buhay pag sumakabilang Buhay',
+    year: 2007,
+    image: './image/',
+    link: 'https://youtu.be/ghm8MNI22aU?si=VX5MJGg15fkJkGFK',
+    origin: 'Knorr Commercial',
+    profile: '',
+    description: '',
+    tags: ['song', 'sound', 'ancient', 'ads']
+  },
+  {
+    title: 'Sinigang',
+    year: 2018,
+    image: './image/',
+    link: 'https://youtu.be/hBZC1zUgD2o?si=eHnZik2eGxQ59SxL',
+    origin: 'NoSia KEnan Music',
+    profile: 'https://youtube.com/@kenanmuzic4795?si=7QAMZwuWZKeoYL47',
+    description: '',
+    tags: ['song', 'parody', 'mythology']
+  },
+  {
+    title: 'Basketball Prayer',
+    year: 2018,
+    image: './image/',
+    news: 'https://sports.inquirer.net/302699/ricci-rivero-apologizes-after-viral-video-shows-him-shouting-at-female-fan',
+    link: 'https://youtu.be/luJM5S86ZxU?si=vIaJVyVqVcgiUsbW',
+    origin: 'Ricci Rivero the Faithful Prayer Leader',
+    profile: '',
+    description: '',
+    tags: ['mythology', 'sports']
+  },
+  {
+    title: 'Manny Pacquiao Masks',
+    year: null,
+    image: './image/',
+    news: 'https://www.gmanetwork.com/entertainment/showbiznews/manny-pacquiao-may-mensahe-tungkol-sa-face-masks-na-may-disensyo-ng-kanyang-mukha/71780/',
+    link: '',
+    origin: '',
+    profile: '',
+    description: '',
+    tags: ['image']
+  },
+  {
+    title: 'Vico Sotto Naapakan ang paa',
+    year: 2021,
+    image: './image/',
+    link: 'https://m.facebook.com/story.php?story_fbid=pfbid0SGAen1oWwtN82SexV8BojsH8YvqJ1it8k589NgM9SYuqJAVRwkUNGM7qGjhpVuFKl&id=100069028928005',
+    origin: 'Vico Sotto',
+    profile: '',
+    description: '',
+    tags: ['politics', 'image']
+  },
+  {
+    title: 'Twin Spin Report',
+    year: 2021,
+    image: './image/',
+    link: 'https://youtu.be/iO3Z3lfN7J0?si=OczuI2GLMhS2y47d',
+    origin: 'JP Soriano',
+    profile: '',
+    description: '',
+    tags: ['news']
+  },
+  {
+    title: 'Momo',
+    year: 2019,
+    image: './image/',
+    link: 'https://youtu.be/wESesArJr-0?si=PeP2AYoRrv6pm36s',
+    origin: 'Unknown',
+    profile: '',
+    description: '',
+    tags: ['dark web', 'creepy']
+  },
+  {
+    title: 'Onanay Gamer',
+    year: 2022,
+    image: './image/',
+    link: 'https://youtu.be/PP4pZGWM5AI?si=aQkAgQgWO3ABrWz6',
+    origin: 'Magpakailanman Jo Berry',
+    profile: '',
+    description: '',
+    tags: ['games']
+  },
+  { 
+    title: 'Onanay x Alden',
+    year: 2019,
+    image: './image/',
+    link: 'https://www.google.com/search?q=Onanay+Alden+meme',
+    origin: 'The Gift',
+    profile: '',
+    description: '',
+    tags: ['celebrity', 'image', 'show']
+  },
+  { 
+    title: 'Rastaman What You Gonna Do with a Big Fat Butt',
+    year: 2021,
+    image: './image/',
+    link: 'https://youtu.be/af5DpBAZYjY?si=HBpgyBqaxlfhUyjX',
+    news: 'https://youtu.be/EV8icc1tjDQ?si=b7eMaKywXhouTJTl',
+    origin: 'Rolando Plaza',
+    profile: '',
+    description: 'Half human Half Zombie',
+    tags: ['urban legend', 'politics', 'viral']
+  },
+  { 
+    title: 'Mama si Bunak sinuntok ako sa likod',
+    year: 2017,
+    image: './image/',
+    profile: 'https://youtu.be/M6pgzIywFLU?si=uPe53CBsDrGn5g1z',
+    link: 'https://youtu.be/ODTaYei6JmU?si=Yf6FT7xiw59SHBc4',
+    origin: 'Bunak and Bilog',
+    news: 'https://youtu.be/-40-LHsdfls?si=1AGzNW4M8fDZZVyI',
+    description: '',
+    tags: ['mythology', 'viral']
+  },
+  { 
+    title: 'Bata nag away, kumakain ng kalapati',
+    year: 2021,
+    image: './image/',
+    link: 'https://youtube.com/shorts/skXsZe7gC_U?si=jtgI4rRq0eGmZkl3',
+    origin: '',
+    profile: '',
+    description: '',
+    tags: ['viral', 'public rage']
+  },
+  { 
+    title: 'Eat Bulaga Appliances with Freebies',
+    year: 2013,
+    image: './image/',
+    link: 'https://youtu.be/HJqHskCv5Rw?si=kU7A4kQD4kb1CT7D',
+    origin: 'Eat Bulaga Hanabishi',
+    profile: '',
+    description: '',
+    tags: ['ads', 'celebrity']
+  },
+  { 
+    title: 'Batang Minecraft',
+    year: 2021,
+    image: './image/',
+    link: 'https://youtu.be/HXth9-i2jzQ?si=sWlPstXFmvD_hINF',
+    origin: '',
+    profile: '',
+    description: '',
+    tags: ['games']
+  },
+  { 
+    title: 'The Nutshack',
+    year: 2007,
+    image: './image/',
+    link: 'https://www.youtube.com/watch?v=MP1vQVTT_mM',
+    origin: 'MYX',
+    profile: 'https://www.youtube.com/@MYXNews/videos',
+    description: '',
+    tags: ['celebrity', 'sound', 'dance', 'ancient']
+  },
+  { 
+    title: 'Yes I do the cooking, Yes I do the cleaning',
+    year: 2020,
+    image: './image/',
+    link: 'https://www.youtube.com/watch?v=5ddHnyRMZSY',
+    origin: 'Kim Arda',
+    profile: 'https://www.tiktok.com/@kimarda5',
+    description: '',
+    tags: ['urban legend', 'tiktok']
+  },
+  { 
+    title: 'Think Before you tatto',
+    year: 2020,
+    image: './image/',
+    link: 'https://www.tiktok.com/@urbandlegend557/video/7567679173800512786?lang=en&q=kim%20arda%20urban%20legend&t=1762168265237',
+    origin: 'MYX',
+    profile: '',
+    description: '',
+    tags: ['urban legend', 'tiktok']
+  },
+  { 
+    title: 'You do note',
+    year: 2019,
+    image: './image/',
+    link: 'https://www.youtube.com/watch?v=tE-L6yp_3Rw',
+    origin: 'Marjorry "Majo" Lingat',
+    profile: 'https://www.facebook.com/youdonotegirl',
+    description: '',
+    tags: ['viral', 'celebrity']
+  },
+  { 
+    title: 'Eagle Pose',
+    year: 2019,
+    image: './image/',
+    link: 'https://www.youtube.com/watch?v=PPa-SAROEiU',
+    news: 'https://youtu.be/YNtYuJLHeCY?si=_HwARElHiqKZ5x2q&t=304',
+    origin: 'Dante Gulapa',
+    profile: 'https://www.facebook.com/thuj.gvi',
+    description: 'Filipinong Ricardo Milos',
+    tags: ['mythology', 'dance']
+  },
+  { 
+    title: 'Barbielat',
+    year: 2022,
+    image: './image/',
+    link: 'https://www.youtube.com/watch?v=B45Y-etTVIw',
+    origin: 'Jun Jun Salarzon',
+    profile: 'https://www.facebook.com/junjun.salarzon',
+    description: '',
+    tags: ['song', 'dance', 'gay humor']
+  },
+  { 
+    title: 'Libre Sampak',
+    year: 2012,
+    image: './image/',
+    link: 'https://www.youtube.com/watch?v=oYvRB9pF-j0',
+    origin: 'NoPetsAllowed',
+    profile: '',
+    description: 'Ayaw og tanduga natulog ko nga utin',
+    tags: ['bisaya', 'song', 'rap', 'mura']
+  },
+  { 
+    title: 'Btch Oten',
+    year: 2010,
+    image: './image/',
+    link: 'https://www.youtube.com/watch?v=xHuh61KNS8E',
+    origin: 'Unknown boyhubag',
+    profile: '',
+    description: 'bitch ni gahi na ang akong oten tabangi kog pasulod sa akong oten unsa imong bilat murag man og gamay sagyod lang day hurot ako bol.bol.',
+    tags: ['song', 'bisaya', 'mura', 'rap']
+  },
+  { 
+    title: 'Bimby Memes',
+    year: 2019,
+    image: './image/',
+    link: 'https://www.facebook.com/Dekada2010OfficialFBPage/posts/ilan-lang-ito-sa-mga-kris-aquino-and-bimby-memes-na-sumikat-last-january-2019-la/188713192868130/',
+    news: 'https://www.facebook.com/watch/?v=316403765656670',
+    origin: 'Bimby',
+    profile: '',
+    description: '',
+    tags: ['image', 'celebrity']
+  },
+  { 
+    title: 'Fan na Fan ni DJ Padunot',
+    year: 2013,
+    image: './image/',
+    link: 'https://www.tiktok.com/@queendalljenner/video/7101249317624646939?embed_source=121374463%2C121468991%2C121439635%2C121749182%2C121433650%2C121404359%2C121497414%2C121477481%2C121351166%2C121811500%2C121896267%2C121860360%2C121487028%2C121331973%2C120811592%2C120810756%2C121885509%3Bnull%3Bembed_pause_share&refer=embed&referer_url=nylonmanila.com%2Fpop-culture%2Fmeet-the-actual-filipinos-behind-viral-memes%2F&referer_video_id=7101249317624646939',
+    origin: 'Aldene Mae Alipoyo',
+    profile: 'https://www.tiktok.com/@queendalljenner',
+    description: 'The OG DJ Fangirl',
+    tags: ['ancient', 'viral', 'celebrity']
+  },
+  { 
+    title: 'Caesar Video Greeting for Kagawad Cris Morales ng Sta. Ana',
+    year: 2018,
+    image: './image/',
+    link: 'https://youtube.com/shorts/5QUEYk0wxRA?si=_WSV8SD5nZvm0c08',
+    news: 'https://www.pep.ph/news/local/71906/cesar-montano-video-greeting-for-a-kagawad-goes-viral',
+    origin: 'Si Buboy - Uploaded by Rolando Olano',
+    profile: '',
+    description: 'J Rizz in modern times',
+    tags: ['celebrity']
+  },
+  { 
+    title: 'Wala kang kwenta kuya / Selfie Snatcher',
+    year: 2018,
+    image: './image/',
+    link: 'https://youtu.be/B8dsjR0kd1k?si=I8-D-8SNG81_Rc_F',
+    origin: 'Alyas Iking',
+    profile: '',
+    description: 'Filipino Foot Bandit',
+    tags: ['news', 'criminal']
+  },
+  { 
+    title: 'Kevin tumalon sa bubong',
+    year: 2021,
+    image: './image/',
+    link: 'https://www.reddit.com/r/Philippines/s/qfHI3XICzn',
+    origin: 'Unknown Kevin',
+    profile: '',
+    description: 'Pinsan ni Dunk it Jonathan',
+    tags: ['mythology', 'sound'],
+  },
+  { 
+    title: 'Ging gang golly golly',
+    year: 2008,
+    image: './image/',
+    link: 'https://youtu.be/PjAiVLgQCRo?si=GLrGrKPSZ72tuJ5X',
+    origin: 'Kim Chui',
+    profile: '',
+    description: 'Punta ka sa restaurant ni pakeng, itry mo azucena Ging Gang Golly Golly watcha ding dang doo',
+    tags: ['celebrity', 'song', 'dance', 'ancient']
+  },
+  {
+    title: 'Kering Keri',
+    year: 2007,
+    image: './image/',
+    link: 'https://youtu.be/sUZVvY_W018?si=p5qvh_QiGfrXL_N4',
+    origin: 'Rejoice Commercial Kim Chui',
+    profile: '',
+    description: '',
+    tags: ['song', 'ads', 'celebrity', 'ancient']
+  },
+  {
+    title: 'Sandara',
+    year: 2006,
+    image: './image/',
+    link: 'https://youtu.be/vfbw1s-2MSM?si=qo7V4hlvk0IQ4fso',
+    origin: 'Sandara Park',
+    profile: '',
+    description: '',
+    tags: ['celebrity', 'ancient']
+  },
+  {
+    title: 'Karylle Irreplaceable',
+    year: 2008,
+    image: './image/',
+    link: 'https://youtu.be/6WfOKKR67Rg?si=yXeI-chEKiuFC3sT&t=103',
+    song: 'https://youtu.be/HeuOnQkcY98?si=0vrM4PHGI_dxkwqR',
+    origin: 'Karylle',
+    profile: '',
+    description: 'Wala kang kwentang lalake, ang hilig mo mambabae, Ano ako marijuana, di ako disposable!!',
+    tags: ['celebrity', 'ancient', 'song']
+  },
+  {
+    title: 'Boysen ads',
+    year: 2012,
+    image: './image/',
+    link: 'https://youtu.be/7OrOpgorjxE?si=7xM8FgktakKOOgSb',
+    origin: 'Boyse Acretyx “Preso” Commercial',
+    profile: '',
+    description: '',
+    tags: ['ads', 'ancient']
+  },
+  {
+    title: 'Akala ko ikaw ay Akin',
+    year: 2013,
+    image: './image/',
+    link: 'https://youtu.be/qxaqMVlifeA?si=qXmzDFziRfd5cExv',
+    origin: '',
+    profile: '',
+    description: '',
+    tags: ['song', 'ancient']
+  },
+  {
+    title: 'Pag tumingin ka bobo ka',
+    year: 2018,
+    image: './image/',
+    link: 'https://youtu.be/rjyrMH54H7A?si=LfEm6F2LC9oNu8eF',
+    origin: 'Unknown',
+    profile: '',
+    description: '',
+    tags: ['mythology']
+  },
+  {
+    title: 'Bobo Ka',
+    year: 2017,
+    image: './image/',
+    link: 'https://youtu.be/DNcKNU8pL5A?si=vGyWWOhTOap9ciKC',
+    origin: 'Mocha Otot',
+    profile: '',
+    description: '',
+    tags: ['politics', 'mura']
+  },
+  {
+    title: 'Pepe Dede ralismo Dance (Federalism Dance)',
+    year: 2018,
+    image: './image/',
+    link: 'https://youtu.be/Z0rxVu2H46A?si=5Kwq3D-UujR1G0xt',
+    news: 'https://youtu.be/DG00ytMPIQ8?si=QIuWqumYZ3K0NBg7',
+    video: 'https://youtu.be/9p_zEzZgpYw?si=w8Dz6dv88EZYtXbB',
+    origin: 'Mocha Otot (Good News Game Show)',
+    profile: '',
+    description: '',
+    tags: ['politics', 'mura']
+  },
+  {
+    title: 'Air Cayetano',
+    year: 2018,
+    image: './image/',
+    video: 'https://youtu.be/X-8NS4x3tkc?si=7QArrISkf684quVB',
+    link: 'https://www.reddit.com/r/Philippines/s/vXZu1n5UZJ',
+    origin: 'Alan Peter Cayetano',
+    profile: '',
+    description: '',
+    tags: ['politics', 'sports']
+  },
+  {
+    title: '10k Cayetano',
+    year: 2021,
+    image: './image/',
+    link: 'https://youtu.be/_eeiToZmZUY?si=Ag2PGYV6-8AvOySe',
+    news: 'https://youtu.be/oo82KkmHyV8?si=t061-ndhfSch4T5i',
+    video: 'https://youtu.be/G3tihC_R5KM?si=elFeWwee7USFVxTZ',
+    origin: 'Alan Peter Cayetano',
+    profile: '',
+    description: '',
+    tags: ['politics']
+  },
+  {
+    title: 'My Pamily, My Pamily Oh My God',
+    year: 2008,
+    image: './image/',
+    link: 'https://youtu.be/ntXg9jOC_f8?si=WF-SZ4-Ec__2xteV',
+    origin: 'Janina San Miguel',
+    profile: '',
+    description: 'Taf 10',
+    tags: ['ancient', 'show', 'celebrity']
+  },
+  {
+    title: 'Wally Bayola',
+    year: 2013,
+    image: './image/',
+    link: 'https://youtu.be/56thvdRDhyw?si=yRdeP88e3KQLuaX6',
+    video: 'https://youtu.be/GC8Hefwxje4?si=N8Ft4dX-I5j56Tdo',
+    news: 'https://youtu.be/X-O31kAamm0?si=KF1wf1DVDMRmYe9d',
+    origin: '',
+    profile: 'https://eatbulaga.fandom.com/wiki/Wally_Bayola',
+    description: '',
+    tags: ['celebrity', 'dark']
+  },
+  {
+    title: 'Wally Becomes Uncanny',
+    year: 2022,
+    image: './image/',
+    link: 'https://youtu.be/QwrifgKr7XI?si=Xo0qj-i584elBwan',
+    origin: 'Wally Bayola',
+    profile: 'https://eatbulaga.fandom.com/wiki/Wally_Bayola',
+    description: '',
+    tags: ['image', 'celebrity']
+  },
+  {
+    title: 'Biolink Racist Commercial',
+    year: 2004,
+    image: './image/',
+    link: 'https://youtu.be/mfieSdFQQ7I?si=F9fnW985UiV6lCfN',
+    origin: 'Biolink Commercial',
+    profile: '',
+    description: '',
+    tags: ['ads', 'ancient']
+  },
+  {
+    title: 'Blackout',
+    year: 2023,
+    image: './image/',
+    link: 'https://youtu.be/bgpB_lAmO_w?si=EIHc8UxPbqal7X5L',
+    news: 'https://m.facebook.com/story.php?story_fbid=pfbid0vxresHEA5s8FfvdcZg11E8uVuVweAu8YPqBWRcyRu86dHbQ7TCPfqjAhTXhUQHrWl&id=100069028928005',
+    origin: 'Jose Manalo',
+    profile: '',
+    description: '',
+    tags: ['dark', 'celebrity', 'show']
+  },
+  {
+    title: 'Blacky Lou Blanco',
+    year: 2005,
+    image: './image/',
+    link: 'https://youtu.be/Nt-2Xv0ozgU?si=r3DKj-oiiC51c5Jh',
+    origin: 'Wally Bayola - BEBOT Eat Bulaga',
+    profile: '',
+    description: '',
+    tags: ['dark', 'ancient', 'show', 'celebrity']
+  },
+  {
+    title: 'Blacky Lou Blanco Comeback',
+    year: 2019,
+    image: './image/',
+    link: 'https://youtu.be/o7UDJhA90I4?si=QbUxeslTotzDglWA',
+    origin: 'Wally Bayola - Eat Bulaga',
+    profile: '',
+    description: '',
+    tags: ['dark', 'celebrity', 'show']
+  },
+  {
+    title: 'Eat Bulaga Laugh Sound Effect',
+    year: 2000,
+    image: './image/',
+    link: 'https://youtu.be/vbDk5GXOXag?si=TDb-KmdlpMdVyGY9',
+    origin: 'Eat Bulaga',
+    profile: '',
+    description: 'Pag may sound effects na ganto, sure benta yung joke',
+    tags: ['sound', 'show', 'Legend']
+  },
+  {
+    title: 'Hindi raw sya Beki',
+    year: 2016,
+    image: './image/',
+    link: 'https://youtu.be/LHe9FPRP-gg?si=E7bfWQ9g5sxv1CxB',
+    origin: 'Eat Bulaga',
+    profile: '',
+    description: '',
+    tags: ['show', 'gay humor']
+  },
+  {
+    title: 'Subo mo TT ko gawin mong Lopipop',
+    year: 2012,
+    image: './image/',
+    link: 'https://youtu.be/jzepvVdJBGk?si=lsNQ317Q019usH5h',
+    video: 'https://youtu.be/VGLvHLWMzmM?si=8nYf2_g45dnq9eKf',
+    origin: 'Bernard Capati - Showtime',
+    profile: '',
+    description: '',
+    tags: ['show', 'mura']
+  },
+  {
+  title: 'Ptangina mo Willie',
+  year: 2011,
+  image: './image/',
+  link: 'https://youtu.be/wuzEQUHn9bY?si=iAHtpoMzLdQqpxNb',
+  origin: 'Willie Revillame - Wowowillie',
+  profile: '',
+  description: '',
+  tags: ['show', 'mura', 'celebrity']
+},
+{
+  title: 'Hindi Madali ginagawa namin dito sa Showtime😎☹️🥺',
+  year: 2014,
+  image: './image/',
+  link: 'https://youtu.be/uc-Qs0aVa5o?si=-5FwT9Fo1ZyZNFjf',
+  origin: 'Jhong Hillarious',
+  profile: '',
+  description: '',
+  tags: []
+},
+{
+  title: 'Robin Padilla Suntukan sa Cubao',
+  year: 2021,
+  image: './image/',
+  link: 'https://youtube.com/shorts/V0j77jhytbE?si=bg79q6gqwc8qQmEe',
+  origin: 'Unknown',
+  profile: '',
+  description: '',
+  tags: ['celebrity', 'public rage']
+},
+{
+  title: 'Badang Irl',
+  year: 2025,
+  image: './image/',
+  link: 'https://youtube.com/shorts/UbKx4h6Gnww?si=ex2rYA7glqnFOcDu',
+  origin: 'Unknown',
+  profile: '',
+  description: '',
+  tags: ['public rage']
+},
+{
+  title: 'Fudgee Bar Suntukan',
+  year: 2020,
+  image: './image/',
+  link: 'https://youtu.be/zszTObZFfYg?si=87Hy-bZmMlhD67y9',
+  origin: 'Ryan Bang',
+  profile: '',
+  description: 'Sino kumain ng fudgee ko??',
+  tags: ['public rage', 'ads']
+},
+{
+  title: 'SB19 Negros',
+  year: 2019,
+  image: './image/',
+  link: 'https://youtu.be/R37gtaf9J3I?si=oROd01h_eSB9AvLv',
+  origin: '',
+  profile: '',
+  description: 'Hello Negros!',
+  tags: ['dark', 'celebrity']
+},
+{
+  title: 'Tulfone',
+  year: 2020,
+  image: './image/',
+  link: 'https://youtu.be/_er2XDvyQ28?si=F4oYzpxleWIv7oGy',
+  origin: '',
+  profile: '',
+  description: '',
+  tags: ['ads', 'show']
+},
+{
+  title: 'Kiffy',
+  year: null,
+  image: './image/',
+  link: '',
+  origin: '',
+  profile: '',
+  description: 'Modern term for Pepe',
+  tags: ['terms']
+},
+{
+  title: 'Sana All',
+  year: null,
+  image: './image/',
+  link: '',
+  origin: '',
+  profile: '',
+  description: 'Signifies Envy',
+  tags: ['terms']
+},
+{
+  title: 'Longanissa Seller',
+  year: null,
+  image: './image/',
+  link: '',
+  origin: '',
+  profile: '',
+  description: 'Meaning neto ay Kabet',
+  tags: ['terms']
+},
+{
+  title: 'Boypespren/Girlbespren',
+  year: null,
+  image: './image/',
+  link: '',
+  origin: '',
+  profile: '',
+  description: '',
+  tags: ['ancient']
+},
+{
+  title: 'Urban Legend',
+  year: null,
+  image: './image/',
+  link: '',
+  origin: '',
+  profile: '',
+  description: 'Old Viral videos, especially on Tiktok',
+  tags: ['terms']
+}
 
 ]
 
